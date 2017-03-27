@@ -36,9 +36,9 @@ plot(x = dataSubset$dateTime, y = dataSubset$Global_active_power, type = "l", xl
 plot(x = dataSubset$dateTime, y = dataSubset$Voltage, type = "l", xlab = "", ylab = "Voltage", col="black")
 
 plot(x = dataSubset$dateTime, y = dataSubset$Sub_metering_1, type = "l", xlab = "", ylab = "Energy Sub Metering", col="black")
-lines(dataSubset$dateTime, dataSubset$Sub_metering_2, col="red")
-lines(dataSubset$dateTime, dataSubset$Sub_metering_3, col="blue")
-legend("toprigth", bty = "n", legend = labels, lty = 1, col = colors)
+lines(dataSubset$dateTime, dataSubset$Sub_metering_2, col="red", type = "l")
+lines(dataSubset$dateTime, dataSubset$Sub_metering_3, col="blue", type = "l")
+legend("topright",  legend = labels, lty = 1, lwd=2.5, col = colors, box.lwd=0, bty="o")
 
 plot(x = dataSubset$dateTime, y = dataSubset$Global_reactive_power, type = "l", xlab = "datetime", ylab = "Global_reactive_power", col="black")
 
@@ -46,5 +46,5 @@ plot(x = dataSubset$dateTime, y = dataSubset$Global_reactive_power, type = "l", 
 if (file.exists("plot4.png")) {
         file.remove("plot4.png")
 }
-dev.copy(png,"plot4.png")
+dev.copy(png,"plot4.png", width=480, height=480)
 dev.off()

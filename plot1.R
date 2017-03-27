@@ -32,5 +32,5 @@ hist(dataSubset$Global_active_power, col = "red", main = "Global Active Power", 
 if (file.exists("plot1.png")) {
         file.remove("plot1.png")
 }
-dev.copy(png,"plot1.png")
+dev.copy(png,"plot1.png", width=480, height=480)
 dev.off()

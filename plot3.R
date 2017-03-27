@@ -32,11 +32,11 @@ plot(x = dataSubset$dateTime, y = dataSubset$Sub_metering_1,
         type = "l", xlab = "", ylab = "Energy Sub Metering", col="black")
 lines(dataSubset$dateTime, dataSubset$Sub_metering_2, col="red")
 lines(dataSubset$dateTime, dataSubset$Sub_metering_3, col="blue")
-legend("topright", legend = labels, lty = "solid", col = colors)
+legend("topright", legend = labels, lty = "solid", lwd=2.5, col = colors)
 
 ## Saves the plot in the corresponding png file
 if (file.exists("plot3.png")) {
         file.remove("plot3.png")
 }
-dev.copy(png,"plot3.png")
+dev.copy(png,"plot3.png", width=480, height=480)
 dev.off()

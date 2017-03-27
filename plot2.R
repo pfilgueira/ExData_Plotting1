@@ -32,5 +32,5 @@ plot(x = dataSubset$dateTime, y = dataSubset$Global_active_power, type = "l", xl
 if (file.exists("plot2.png")) {
         file.remove("plot2.png")
 }
-dev.copy(png,"plot2.png")
+dev.copy(png,"plot2.png", width=480, height=480)
 dev.off()
